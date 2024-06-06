@@ -1,0 +1,5 @@
+D:/BELAJAR PEMROGRAMAN/GAME/ARGamelan/.utmp/Debug/3y45z410/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/BELAJAR PEMROGRAMAN/GAME/ARGamelan/.utmp/Debug/3y45z410/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/BELAJAR PEMROGRAMAN/GAME/ARGamelan/.utmp/Debug/3y45z410/arm64-v8a/GameActivity/CMakeFiles/game.dir
+D:/BELAJAR PEMROGRAMAN/GAME/ARGamelan/.utmp/Debug/3y45z410/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+D:/BELAJAR PEMROGRAMAN/GAME/ARGamelan/.utmp/Debug/3y45z410/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
