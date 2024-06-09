@@ -10,7 +10,7 @@ public class ImageTracker : MonoBehaviour
     private ARTrackedImageManager trackedImages;
     public GameObject[] ArPrefabs;
 
-    Dictionary<string, GameObject> ARObjects = new Dictionary<string, GameObject>();
+    List<GameObject> ARObjects = new List<GameObject>();
 
     
     void Awake()
@@ -40,7 +40,7 @@ public class ImageTracker : MonoBehaviour
                 if(trackedImage.referenceImage.name == arPrefab.name)
                 {
                     var newPrefab = Instantiate(arPrefab, trackedImage.transform);
-                    ARObjects[trackedImage.referenceImage.name] = newPrefab;
+                    ARObjects.Add(newPrefab);
                 }
             }
         }
@@ -48,11 +48,14 @@ public class ImageTracker : MonoBehaviour
         //Update tracking position
         foreach (var trackedImage in eventArgs.updated)
         {
-            if(ARObjects.ContainsKey(trackedImage.name))
+            foreach (var gameObject in ARObjects)
             {
-                var gameObject = ARObjects[trackedImage.name];
-                gameObject.SetActive(trackedImage.trackingState == TrackingState.Tracking);
+                if(gameObject.name == trackedImage.name)
+                {
+                    gameObject.SetActive(trackedImage.trackingState == TrackingState.Tracking);
+                }
             }
         }
+        
     }
 }
