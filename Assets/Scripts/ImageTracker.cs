@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
@@ -9,10 +9,19 @@ public class ImageTracker : MonoBehaviour
 {
     private ARTrackedImageManager trackedImages;
     public GameObject[] ArPrefabs;
+    public ImageData[] imageDatas;
 
-    List<GameObject> ARObjects = new List<GameObject>();
+    [System.Serializable]
+    public struct ImageData
+    {
+        public string title;
+        public string description;
+    }
 
-    
+    public TextMeshProUGUI publicText;
+
+    private Dictionary<string, GameObject> spawnedPrefabs = new Dictionary<string, GameObject>();
+
     void Awake()
     {
         trackedImages = GetComponent<ARTrackedImageManager>();
@@ -28,34 +37,58 @@ public class ImageTracker : MonoBehaviour
         trackedImages.trackedImagesChanged -= OnTrackedImagesChanged;
     }
 
-
     // Event Handler
     private void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs)
     {
-        //Create object based on image tracked
+        // Handle added and updated images
         foreach (var trackedImage in eventArgs.added)
+        {
+            UpdatePrefab(trackedImage);
+        }
+
+        foreach (var trackedImage in eventArgs.updated)
+        {
+            UpdatePrefab(trackedImage);
+        }
+
+        // Handle removed images
+        foreach (var trackedImage in eventArgs.removed)
+        {
+            if (spawnedPrefabs.TryGetValue(trackedImage.referenceImage.name, out GameObject prefab))
+            {
+                prefab.SetActive(false);
+            }
+        }
+    }
+
+    private void UpdatePrefab(ARTrackedImage trackedImage)
+    {
+        if (!spawnedPrefabs.TryGetValue(trackedImage.referenceImage.name, out GameObject prefab))
         {
             foreach (var arPrefab in ArPrefabs)
             {
-                if(trackedImage.referenceImage.name == arPrefab.name)
+                if (trackedImage.referenceImage.name == arPrefab.name)
                 {
-                    var newPrefab = Instantiate(arPrefab, trackedImage.transform);
-                    ARObjects.Add(newPrefab);
+                    prefab = Instantiate(arPrefab, trackedImage.transform);
+                    spawnedPrefabs[trackedImage.referenceImage.name] = prefab;
+                    break;
                 }
             }
         }
-        
-        //Update tracking position
-        foreach (var trackedImage in eventArgs.updated)
+
+        if (prefab != null)
         {
-            foreach (var gameObject in ARObjects)
+            prefab.SetActive(trackedImage.trackingState == TrackingState.Tracking);
+
+            // Set text based on title and description
+            foreach (var imageData in imageDatas)
             {
-                if(gameObject.name == trackedImage.name)
+                if (trackedImage.referenceImage.name == imageData.title)
                 {
-                    gameObject.SetActive(trackedImage.trackingState == TrackingState.Tracking);
+                    publicText.text = imageData.description;
+                    break;
                 }
             }
         }
-        
     }
 }
