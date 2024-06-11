@@ -25,5 +25,35 @@ MonoBehaviour:
       m_GuidHigh: 4185750664974377128
     m_Size: {x: 0.05, y: 0.05}
     m_SpecifySize: 1
-    m_Name: image_tracker_ar
-    m_Texture: {fileID: 2800000, guid: cb0ad27613062c04a82027800dc6163a, type: 3}
+    m_Name: bonang
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4905824941628147553
+      m_GuidHigh: 6445606505743924134
+    m_SerializedTextureGuid:
+      m_GuidLow: 636153583415940288
+      m_GuidHigh: 14047629261454660953
+    m_Size: {x: 0.05, y: 0.05}
+    m_SpecifySize: 1
+    m_Name: jengglong
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5560093250237163692
+      m_GuidHigh: 12630643961912052927
+    m_SerializedTextureGuid:
+      m_GuidLow: 11922410471017970720
+      m_GuidHigh: 378207731509977162
+    m_Size: {x: 0.05, y: 0.05}
+    m_SpecifySize: 1
+    m_Name: gong
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5712171752212245339
+      m_GuidHigh: 8017977146284169620
+    m_SerializedTextureGuid:
+      m_GuidLow: 1928851459958421370
+      m_GuidHigh: 8268818313985024072
+    m_Size: {x: 0.050229885, y: 0.05}
+    m_SpecifySize: 1
+    m_Name: rindik
+    m_Texture: {fileID: 0}
