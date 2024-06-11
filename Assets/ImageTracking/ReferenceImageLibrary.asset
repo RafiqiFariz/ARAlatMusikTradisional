@@ -57,3 +57,13 @@ MonoBehaviour:
     m_SpecifySize: 1
     m_Name: rindik
     m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5154471061465541475
+      m_GuidHigh: 1345548214644208558
+    m_SerializedTextureGuid:
+      m_GuidLow: 18173260668564039336
+      m_GuidHigh: 8731646016176660842
+    m_Size: {x: 0.05, y: 0.05}
+    m_SpecifySize: 1
+    m_Name: gendang
+    m_Texture: {fileID: 0}
