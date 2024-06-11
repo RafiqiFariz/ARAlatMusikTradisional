@@ -1,0 +1,5 @@
+D:/BELAJAR PEMROGRAMAN/GAME/ARAlatMusikTradisional/.utmp/Debug/2tb6e1n3/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/BELAJAR PEMROGRAMAN/GAME/ARAlatMusikTradisional/.utmp/Debug/2tb6e1n3/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+D:/BELAJAR PEMROGRAMAN/GAME/ARAlatMusikTradisional/.utmp/Debug/2tb6e1n3/armeabi-v7a/GameActivity/CMakeFiles/game.dir
+D:/BELAJAR PEMROGRAMAN/GAME/ARAlatMusikTradisional/.utmp/Debug/2tb6e1n3/armeabi-v7a/GameActivity/CMakeFiles/edit_cache.dir
+D:/BELAJAR PEMROGRAMAN/GAME/ARAlatMusikTradisional/.utmp/Debug/2tb6e1n3/armeabi-v7a/GameActivity/CMakeFiles/rebuild_cache.dir
