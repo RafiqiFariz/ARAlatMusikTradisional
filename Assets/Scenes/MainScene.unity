@@ -785,7 +785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &743251045
 RectTransform:
   m_ObjectHideFlags: 0
@@ -891,6 +891,7 @@ MonoBehaviour:
   - {fileID: 3309678885657739393, guid: 035a256982729df4f945ec730f1d3024, type: 3}
   - {fileID: 920626820436972489, guid: 9bce2cbbe07ab534ca7d0f41ecc61a50, type: 3}
   - {fileID: 1518045101927686479, guid: 49fea03e195e4ef4181ae863d846be2b, type: 3}
+  - {fileID: 7879308072389709261, guid: 5e969d3b21aa0fb44a30cb6cfa3a4e82, type: 3}
   imageDatas:
   - title: bonang
     description: Alat Musik Bonang adalah instrumen tradisional dari Jawa Tengah,
@@ -918,6 +919,12 @@ MonoBehaviour:
       Bali. Terbuat dari batang bambu yang dibentuk sedemikian rupa hingga mampu
       menghasilkan suara merdu saat dipukul. Alat yang digunakan untuk memukul rindik
       disebut panggul. Jumlah panggul yang digunakan adalah dua batang dan\_tiga\_batang."
+  - title: gendang
+    description: Kendang atau kendhang ini adalah instrumen gamelan dari Jawa Tengah
+      dan Jawa Barat. Fungsinya sendiri sebagai pengatur irama. Alat musik tradisional
+      ini dibunyikan dengan tangan dan tidak menggunakan alat bantu. Gendang ini
+      banyak dimainkan oleh pemain gamelan profesional yang sudah lama menyelami
+      budaya Jawa.
   publicText: {fileID: 1411619285}
 --- !u!1 &860791938
 GameObject:
@@ -1168,10 +1175,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Alat Musik Bonang adalah instrumen tradisional dari Jawa Tengah, Indonesia,
-    yang termasuk dalam kelompok gamelan dan terbuat dari logam. Bentuknya menyerupai
-    gong kecil dengan tonjolan di bagian atas yang disebut pencu, dan digunakan sebagai
-    petunjuk arah dalam pertunjukan musik gamelan dengan teknik pemukulan khusus.
+  m_text: Arahkan kamera anda pada image untuk melihat deskripsi alat musik tradisional
+    terebut
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
