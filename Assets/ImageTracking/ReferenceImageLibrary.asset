@@ -26,7 +26,7 @@ MonoBehaviour:
     m_Size: {x: 0.05, y: 0.05}
     m_SpecifySize: 1
     m_Name: bonang
-    m_Texture: {fileID: 2800000, guid: cb0ad27613062c04a82027800dc6163a, type: 3}
+    m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 4905824941628147553
       m_GuidHigh: 6445606505743924134
@@ -56,4 +56,4 @@ MonoBehaviour:
     m_Size: {x: 0.050229885, y: 0.05}
     m_SpecifySize: 1
     m_Name: rindik
-    m_Texture: {fileID: 2800000, guid: ef50b77aa82e1ac44860524d72bec072, type: 3}
+    m_Texture: {fileID: 0}
