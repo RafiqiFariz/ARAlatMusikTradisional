@@ -785,7 +785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &743251045
 RectTransform:
   m_ObjectHideFlags: 0
@@ -872,7 +872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SerializedLibrary: {fileID: 11400000, guid: 25f1a20cf25d2114087c70b2d8839df3, type: 2}
-  m_MaxNumberOfMovingImages: 1
+  m_MaxNumberOfMovingImages: 0
   m_TrackedImagePrefab: {fileID: 0}
 --- !u!114 &810888891
 MonoBehaviour:
@@ -892,6 +892,7 @@ MonoBehaviour:
   - {fileID: 920626820436972489, guid: 9bce2cbbe07ab534ca7d0f41ecc61a50, type: 3}
   - {fileID: 1518045101927686479, guid: 49fea03e195e4ef4181ae863d846be2b, type: 3}
   - {fileID: 7879308072389709261, guid: 5e969d3b21aa0fb44a30cb6cfa3a4e82, type: 3}
+  - {fileID: 5192343554185205277, guid: dfa44a69c7cb0c644afa69e7dad1847d, type: 3}
   imageData:
   - title: bonang
     description: Alat Musik Bonang adalah instrumen tradisional dari Jawa Tengah,      
@@ -925,6 +926,16 @@ MonoBehaviour:
       ini dibunyikan dengan tangan dan tidak menggunakan alat bantu. Gendang ini      
       banyak dimainkan oleh pemain gamelan profesional yang sudah lama menyelami      
       budaya Jawa.
+  - title: suling
+    description: Suling Indonesia adalah alat musik tiup tradisional yang terbuat
+      dari bambu, dikenal luas dalam budaya dan musik daerah di Indonesia. Instrumen
+      ini memiliki lubang-lubang nada yang disusun sepanjang tubuhnya, yang memungkinkan
+      pemain mengubah nada dengan menutup dan membuka lubang-lubang tersebut menggunakan
+      jari. Suling sering dimainkan dalam berbagai upacara adat, seperti pernikahan
+      dan ritual keagamaan, serta merupakan bagian integral dari ansambel musik tradisional
+      seperti gamelan dan angklung. Dengan suara yang khas dan melodi yang merdu,
+      suling menambah kedalaman dan keindahan pada musik tradisional Indonesia, sekaligus
+      memperkaya identitas budaya bangsa.
   scaleFactor: {x: 0.5, y: 0.5, z: 0.5}
   txtDescription: {fileID: 1411619285}
 --- !u!1 &860791938
