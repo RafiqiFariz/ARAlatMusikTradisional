@@ -872,7 +872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SerializedLibrary: {fileID: 11400000, guid: 25f1a20cf25d2114087c70b2d8839df3, type: 2}
-  m_MaxNumberOfMovingImages: 0
+  m_MaxNumberOfMovingImages: 1
   m_TrackedImagePrefab: {fileID: 0}
 --- !u!114 &810888891
 MonoBehaviour:
@@ -886,18 +886,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7336f542a3c2574e92f2ad5c64c420f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ArPrefabs:
+  prefabsToSpawn:
   - {fileID: 4300366945277559905, guid: 4629cf42d84138d41b200c12201132ca, type: 3}
-  - {fileID: 3309678885657739393, guid: 035a256982729df4f945ec730f1d3024, type: 3}
+  - {fileID: 8815938685935050064, guid: 035a256982729df4f945ec730f1d3024, type: 3}
   - {fileID: 920626820436972489, guid: 9bce2cbbe07ab534ca7d0f41ecc61a50, type: 3}
   - {fileID: 1518045101927686479, guid: 49fea03e195e4ef4181ae863d846be2b, type: 3}
   - {fileID: 7879308072389709261, guid: 5e969d3b21aa0fb44a30cb6cfa3a4e82, type: 3}
-  imageDatas:
+  imageData:
   - title: bonang
-    description: Alat Musik Bonang adalah instrumen tradisional dari Jawa Tengah,
-      Indonesia, yang termasuk dalam kelompok gamelan dan terbuat dari logam. Bentuknya
-      menyerupai gong kecil dengan tonjolan di bagian atas yang disebut pencu, dan
-      digunakan sebagai petunjuk arah dalam pertunjukan musik gamelan dengan teknik
+    description: Alat Musik Bonang adalah instrumen tradisional dari Jawa Tengah,      
+      Indonesia, yang termasuk dalam kelompok gamelan dan terbuat dari logam. Bentuknya      
+      menyerupai gong kecil dengan tonjolan di bagian atas yang disebut pencu, dan      
+      digunakan sebagai petunjuk arah dalam pertunjukan musik gamelan dengan teknik      
       pemukulan khusus.
   - title: jengglong
     description: Jengglong adalah instrumen pukul khas Sunda dari Jawa Barat yang
@@ -909,23 +909,24 @@ MonoBehaviour:
       terbuat dari kayu dengan ujung dibalut wol atau karet tipis, untuk menghasilkan
       suara yang nyaring namun lembut saat dipukul.
   - title: gong
-    description: "Gong adalah alat musik tradisional Indonesia asal Jawa Barat. Secara
-      ukuran, Gong tergolong alat musik yang cukup besar. Cara memainkan alat musik
-      ini adalah dengan dipukul menggunakan alat pukul yang telah didesain secara
-      khusus. Dengan dipukul, maka Gong akan menghasilkan suara\_membranofon."
+    description: Gong adalah alat musik tradisional Indonesia asal Jawa Barat. Secara      
+      ukuran, Gong tergolong alat musik yang cukup besar. Cara memainkan alat musik      
+      ini adalah dengan dipukul menggunakan alat pukul yang telah didesain secara      
+      khusus. Dengan dipukul, maka Gong akan menghasilkan suara\_membranofon.
   - title: rindik
-    description: "Rindik adalah alat musik tradisional khas Bali tercipta dari sejarah
-      panjang kekayaan seni dan budaya di Indonesia, khususnya di pulau Jawa dan
-      Bali. Terbuat dari batang bambu yang dibentuk sedemikian rupa hingga mampu
-      menghasilkan suara merdu saat dipukul. Alat yang digunakan untuk memukul rindik
-      disebut panggul. Jumlah panggul yang digunakan adalah dua batang dan\_tiga\_batang."
+    description: Rindik adalah alat musik tradisional khas Bali tercipta dari sejarah      
+      panjang kekayaan seni dan budaya di Indonesia, khususnya di pulau Jawa dan      
+      Bali. Terbuat dari batang bambu yang dibentuk sedemikian rupa hingga mampu      
+      menghasilkan suara merdu saat dipukul. Alat yang digunakan untuk memukul rindik      
+      disebut panggul. Jumlah panggul yang digunakan adalah dua batang dan\_tiga\_batang.
   - title: gendang
-    description: Kendang atau kendhang ini adalah instrumen gamelan dari Jawa Tengah
-      dan Jawa Barat. Fungsinya sendiri sebagai pengatur irama. Alat musik tradisional
-      ini dibunyikan dengan tangan dan tidak menggunakan alat bantu. Gendang ini
-      banyak dimainkan oleh pemain gamelan profesional yang sudah lama menyelami
+    description: Kendang atau kendhang ini adalah instrumen gamelan dari Jawa Tengah      
+      dan Jawa Barat. Fungsinya sendiri sebagai pengatur irama. Alat musik tradisional      
+      ini dibunyikan dengan tangan dan tidak menggunakan alat bantu. Gendang ini      
+      banyak dimainkan oleh pemain gamelan profesional yang sudah lama menyelami      
       budaya Jawa.
-  publicText: {fileID: 1411619285}
+  scaleFactor: {x: 0.5, y: 0.5, z: 0.5}
+  txtDescription: {fileID: 1411619285}
 --- !u!1 &860791938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Arahkan kamera anda pada image untuk melihat deskripsi alat musik tradisional
+  m_text: Arahkan kamera Anda pada image untuk melihat deskripsi alat musik tradisional
     terebut
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1210,7 +1211,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
