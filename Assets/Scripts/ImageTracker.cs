@@ -85,7 +85,7 @@ public class ImageTracker : MonoBehaviour
         var arObject = arObjects[name];
         arObject.SetActive(true);
         arObject.transform.position = transform.position;
-        arObject.transform.localScale = transform.localScale;
+        arObject.transform.localRotation = transform.localRotation;
         // arObject.transform.localScale = scaleFactor;
     }
 }
