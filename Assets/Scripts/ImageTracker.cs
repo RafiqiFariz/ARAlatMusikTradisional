@@ -1,17 +1,19 @@
-using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
-
 using UnityEngine.XR.ARFoundation;
+using UnityEngine;
+using System.Linq;
+using TMPro;
 using UnityEngine.XR.ARSubsystems;
-using static ImageTracker;
 
 public class ImageTracker : MonoBehaviour
 {
-    private ARTrackedImageManager trackedImages;
-    public GameObject[] ArPrefabs;
-    public ImageData[] imageDatas;
+    [SerializeField] private GameObject[] prefabsToSpawn;
+    private ARTrackedImageManager arTrackedImageManager;
+    private Dictionary<string, GameObject> arObjects;
+    
+    public ImageData[] imageData;
+    public Vector3 scaleFactor = new Vector3(0.5f, 0.5f, 0.5f);
+    public TextMeshProUGUI txtDescription;
 
     [System.Serializable]
     public struct ImageData
@@ -19,67 +21,71 @@ public class ImageTracker : MonoBehaviour
         public string title;
         public string description;
     }
-
-    public TextMeshProUGUI publicText;
-
-    List<GameObject> ARObjects = new List<GameObject>();
-
-
+    
     void Awake()
     {
-        trackedImages = GetComponent<ARTrackedImageManager>();
+        arTrackedImageManager = GetComponent<ARTrackedImageManager>();
+        arObjects = new Dictionary<string, GameObject>();
+
+        foreach (var prefab in prefabsToSpawn)
+        {
+            GameObject newARObject = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+            newARObject.name = prefab.name;
+            newARObject.gameObject.SetActive(false);
+            arObjects.Add(prefab.name, newARObject);
+        }
     }
 
-    void OnEnable()
+    void OnEnable() => arTrackedImageManager.trackedImagesChanged += OnChanged;
+
+    void OnDisable() => arTrackedImageManager.trackedImagesChanged -= OnChanged;
+
+    private void OnChanged(ARTrackedImagesChangedEventArgs eventArgs)
     {
-        trackedImages.trackedImagesChanged += OnTrackedImagesChanged;
+        foreach (var newImage in eventArgs.added)
+        {
+            UpdateARImage(newImage);
+        }
+
+        foreach (var updatedImage in eventArgs.updated)
+        {
+            UpdateARImage(updatedImage);
+        }
+
+        foreach (var removedImage in eventArgs.removed)
+        {
+            arObjects[removedImage.referenceImage.name].SetActive(false);
+        }
     }
 
-    void OnDisable()
+    private void UpdateARImage(ARTrackedImage trackedImage)
     {
-        trackedImages.trackedImagesChanged -= OnTrackedImagesChanged;
+        if (trackedImage.trackingState is TrackingState.Limited or TrackingState.None)
+        {
+            arObjects[trackedImage.referenceImage.name].SetActive(false);
+            return;
+        }
+        
+        var matchingImageData = imageData.FirstOrDefault(data => data.title == trackedImage.referenceImage.name);
+        if (matchingImageData.title != null)
+        {
+            txtDescription.text = matchingImageData.description;
+        }
+
+        // Assign and place game object
+        AssignGameObject(trackedImage.referenceImage.name, trackedImage.transform);
+
+        Debug.Log($"Tracked Reference Image Name: {trackedImage.referenceImage.name}");
     }
 
-
-    // Event Handler
-    private void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs)
+    private void AssignGameObject(string name, Transform transform)
     {
-        //Create object based on image tracked
-        foreach (var trackedImage in eventArgs.added)
-        {
-            foreach (var arPrefab in ArPrefabs)
-            {
-                if (trackedImage.referenceImage.name == arPrefab.name)
-                {
-                    var newPrefab = Instantiate(arPrefab, trackedImage.transform);
-                    ARObjects.Add(newPrefab);
-                }
-            }
-        }
+        if (prefabsToSpawn == null) return;
 
-        foreach (var trackedImage in eventArgs.added)
-        {
-            foreach (var imageData in imageDatas)
-            {
-                if (trackedImage.referenceImage.name == imageData.title)
-                {
-                    publicText.text = imageData.description;
-                    break;
-                }
-            }
-        }
-
-        //Update tracking position
-        foreach (var trackedImage in eventArgs.updated)
-        {
-            foreach (var gameObject in ARObjects)
-            {
-                if (gameObject.name == trackedImage.name)
-                {
-                    gameObject.SetActive(trackedImage.trackingState == TrackingState.Tracking);
-                }
-            }
-        }
-
+        var arObject = arObjects[name];
+        arObject.SetActive(true);
+        arObject.transform.position = transform.position;
+        arObject.transform.localRotation = transform.localRotation;
+        // arObject.transform.localScale = scaleFactor;
     }
 }
