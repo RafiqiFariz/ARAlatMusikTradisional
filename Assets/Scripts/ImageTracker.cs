@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using TMPro;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.UI;
 
 public class ImageTracker : MonoBehaviour
 {
@@ -14,12 +15,15 @@ public class ImageTracker : MonoBehaviour
     public ImageData[] imageData;
     public Vector3 scaleFactor = new Vector3(0.5f, 0.5f, 0.5f);
     public TextMeshProUGUI txtDescription;
+    public RawImage image;
+    public GameObject clue;
 
     [System.Serializable]
     public struct ImageData
     {
         public string title;
         public string description;
+        public Texture imageInstruction;
     }
     
     void Awake()
@@ -62,14 +66,18 @@ public class ImageTracker : MonoBehaviour
     {
         if (trackedImage.trackingState is TrackingState.Limited or TrackingState.None)
         {
+            clue.SetActive(true);
             arObjects[trackedImage.referenceImage.name].SetActive(false);
             return;
         }
+
+        clue.SetActive(false);
         
         var matchingImageData = imageData.FirstOrDefault(data => data.title == trackedImage.referenceImage.name);
         if (matchingImageData.title != null)
         {
             txtDescription.text = matchingImageData.description;
+            image.texture = matchingImageData.imageInstruction;
         }
 
         // Assign and place game object

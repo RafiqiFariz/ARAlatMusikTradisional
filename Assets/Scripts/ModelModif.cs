@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Modal : MonoBehaviour
+public class ModelModif : MonoBehaviour
 {
     private void Start() {
         transform.localScale = Vector3.zero;
+        Open();
     }
 
     public void Open() {
