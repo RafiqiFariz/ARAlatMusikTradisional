@@ -1292,7 +1292,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740856751}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1502,11 +1502,9 @@ MonoBehaviour:
       dari bambu, dikenal luas dalam budaya dan musik daerah di Indonesia. Instrumen
       ini memiliki lubang-lubang nada yang disusun sepanjang tubuhnya, yang memungkinkan
       pemain mengubah nada dengan menutup dan membuka lubang-lubang tersebut menggunakan
-      jari. Suling sering dimainkan dalam berbagai upacara adat, seperti pernikahan
-      dan ritual keagamaan, serta merupakan bagian integral dari ansambel musik tradisional
-      seperti gamelan dan angklung. Dengan suara yang khas dan melodi yang merdu,
-      suling menambah kedalaman dan keindahan pada musik tradisional Indonesia, sekaligus
-      memperkaya identitas budaya bangsa.
+      jari. Suling sering dimainkan dalam berbagai upacara adat. Dengan suara yang
+      khas dan melodi yang merdu, suling menambah kedalaman dan keindahan pada musik
+      tradisional Indonesia, sekaligus memperkaya identitas budaya bangsa.
     imageInstruction: {fileID: 2800000, guid: 7eb374c6127971043b87f959f0e8dfa9, type: 3}
   scaleFactor: {x: 0.5, y: 0.5, z: 0.5}
   txtDescription: {fileID: 1411619285}
@@ -3010,7 +3008,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Arahkan kamera ke image traker
+  m_text: Arahkan kamera ke image tracker
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3437,7 +3435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1984299998
 RectTransform:
   m_ObjectHideFlags: 0

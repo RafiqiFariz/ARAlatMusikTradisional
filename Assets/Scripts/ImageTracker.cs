@@ -58,6 +58,9 @@ public class ImageTracker : MonoBehaviour
 
         foreach (var removedImage in eventArgs.removed)
         {
+            clue.SetActive(true);
+            txtDescription.text = "";
+            image.texture = null;
             arObjects[removedImage.referenceImage.name].SetActive(false);
         }
     }
@@ -67,11 +70,11 @@ public class ImageTracker : MonoBehaviour
         if (trackedImage.trackingState is TrackingState.Limited or TrackingState.None)
         {
             clue.SetActive(true);
+            txtDescription.text = "";
+            image.texture = null;
             arObjects[trackedImage.referenceImage.name].SetActive(false);
             return;
         }
-
-        clue.SetActive(false);
         
         var matchingImageData = imageData.FirstOrDefault(data => data.title == trackedImage.referenceImage.name);
         if (matchingImageData.title != null)
@@ -90,6 +93,7 @@ public class ImageTracker : MonoBehaviour
     {
         if (prefabsToSpawn == null) return;
 
+        clue.SetActive(false);
         var arObject = arObjects[name];
         arObject.SetActive(true);
         arObject.transform.position = transform.position;
